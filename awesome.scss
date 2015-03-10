@@ -1,1 +1,7 @@
-// Start here
+// do work here
+
+@mixin sassy-type($value) {
+  @if $value == 'body' {
+    font-size: 1rem;
+  }
+}

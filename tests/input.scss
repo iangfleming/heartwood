@@ -1,0 +1,6 @@
+@import '../awesome';
+// write tests here
+
+* {
+  @include sassy-type(body);
+}
