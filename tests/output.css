@@ -1,4 +1,10 @@
-/* output tests here */
-
 * {
+  font-size: 62.5%; }
+
+section {
+  font-size: 10px;
   font-size: 1rem; }
+
+p {
+  font-size: 18px;
+  font-size: 1.8em; }
