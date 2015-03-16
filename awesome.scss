@@ -1,16 +1,16 @@
 // do work here
 // based on this article https://css-tricks.com/rems-ems/
 
-@mixin sassy-type( $element, $value: "" ) {
-  @if $element == 'body' {
-    font-size: 62.5%;
-  }
-  @if $element == 'module' {
-    font-size: unquote($value) * 10px;
-    font-size: unquote($value) + rem;
-  }
-  @if $element == 'element' {
-    font-size: unquote($value) * 10px;
-    font-size: unquote($value) + em;
-  }
+@mixin body-type( $value: 62.5% ) {
+  font-size: $value;
+}
+
+@mixin module-type( $value ) {
+  font-size: $value * 10px;
+  font-size: $value + rem;
+}
+
+@mixin element-type( $value ) {
+  font-size: $value * 10px;
+  font-size: $value + em;
 }

@@ -2,13 +2,13 @@
 // write tests here
 
 * {
-  @include sassy-type(body);
+  @include body-type();
 }
 
 section {
-  @include sassy-type(module, 1);
+  @include module-type(1);
 }
 
 p {
-  @include sassy-type(element, 1.8);
+  @include element-type(1.8);
 }
