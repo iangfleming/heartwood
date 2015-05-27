@@ -5,17 +5,18 @@
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
 @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 
 // Defaults
 $base-font-size: 62.5% !default;
 $body-copy-color: #2d2d2d !default;
 $headings-font-family: 'Roboto', helvetica, sans-serif !default;
-$body-font-family: 'Libre Baskerville', serif !default;
+$body-font-family: 'Roboto', helvetica, sans-serif !default;
 $code-font-family: 'Roboto', helvetica, sans-serif !default;
 $type-margins: true !default;
 $ms-base: .5em;
 @if $ms-ratio == null {
-  $ms-ratio: $major-sixth;
+  $ms-ratio: $minor-sixth;
 }
 // Strip units so that the result
 // can be used with em's and px's
@@ -68,7 +69,7 @@ $ms-base: .5em;
   text-rendering: optimizeSpeed;
 }
 
-@mixin h($heading-level) {
+@mixin h($heading-level, $heading-weight: 400) {
     font-family: $headings-font-family;
     line-height: 1.25;
     @include margin(1em 0 .5em 0);
@@ -77,32 +78,32 @@ $ms-base: .5em;
     @if $heading-level == 1 {
       @include element-type(su(ms(6)));
       letter-spacing: .2rem;
-      font-weight: 100;
+      font-weight: $heading-weight;
     }
     @else if $heading-level == 2 {
       @include element-type(su(ms(5)));
       letter-spacing: .2rem;
-      font-weight: 100;
+      font-weight: $heading-weight;
     }
     @else if $heading-level == 3 {
       @include element-type(su(ms(4)));
       letter-spacing: .2rem;
-      font-weight: 100;
+      font-weight: $heading-weight;
     }
     @else if $heading-level == 4 {
       @include element-type(su(ms(3)));
       letter-spacing: .2rem;
-      font-weight: 100;
+      font-weight: $heading-weight;
     }
     @else if $heading-level == 5 {
       @include element-type(su(ms(2)));
       letter-spacing: .2rem;
-      font-weight: 500;
+      font-weight: $heading-weight;
     }
     @else if $heading-level == 6 {
       @include element-type(su(ms(1)));
       letter-spacing: .2rem;
-      font-weight: 500;
+      font-weight: $heading-weight;
     }
     @else {
       @error "Please provide a valid heading value between 1 and 6";
@@ -117,6 +118,8 @@ $ms-base: .5em;
 
 @mixin hr {
   margin: 1em 0;
+  border-style: solid;
+  color: currentColor;
 }
 
 @mixin blockquote($decoration: '') {
