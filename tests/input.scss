@@ -1,8 +1,8 @@
 @import '../awesome';
 // write tests here
 
-* {
-  @include body-type();
+html {
+  @include document-type();
 }
 
 section {
@@ -10,5 +10,14 @@ section {
 }
 
 p {
-  @include element-type(1.8);
+  @include p;
+}
+
+h1 {
+  @include h(3);
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 500px;
 }
