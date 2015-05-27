@@ -1,7 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
 @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  color: #2d2d2d; }
   @media (max-width: 900px) {
     html {
       font-size: 59.375%; } }
@@ -18,14 +19,90 @@ p {
   font-size: 16px;
   font-size: 1.6em;
   letter-spacing: .01rem;
-  font-weight: 400; }
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 0 1em 0;
+  text-rendering: optimizeSpeed; }
 
 h1 {
   font-family: "Roboto", helvetica, sans-serif;
-  font-size: 30px;
-  font-size: 3em;
+  line-height: 1.25;
+  margin: 1em 0 0.5em 0;
+  text-rendering: optimizeLegibility;
+  font-size: 107.1673526663px;
+  font-size: 10.7167352666em;
   letter-spacing: .2rem;
   font-weight: 100; }
+
+h2 {
+  font-family: "Roboto", helvetica, sans-serif;
+  line-height: 1.25;
+  margin: 1em 0 0.5em 0;
+  text-rendering: optimizeLegibility;
+  font-size: 64.3004115869px;
+  font-size: 6.4300411587em;
+  letter-spacing: .2rem;
+  font-weight: 100; }
+
+h3 {
+  font-family: "Roboto", helvetica, sans-serif;
+  line-height: 1.25;
+  margin: 1em 0 0.5em 0;
+  text-rendering: optimizeLegibility;
+  font-size: 38.5802469444px;
+  font-size: 3.8580246944em;
+  letter-spacing: .2rem;
+  font-weight: 100; }
+
+h4 {
+  font-family: "Roboto", helvetica, sans-serif;
+  line-height: 1.25;
+  margin: 1em 0 0.5em 0;
+  text-rendering: optimizeLegibility;
+  font-size: 23.148148162px;
+  font-size: 2.3148148162em;
+  letter-spacing: .2rem;
+  font-weight: 100; }
+
+h5 {
+  font-family: "Roboto", helvetica, sans-serif;
+  line-height: 1.25;
+  margin: 1em 0 0.5em 0;
+  text-rendering: optimizeLegibility;
+  font-size: 13.8888888944px;
+  font-size: 1.3888888894em;
+  letter-spacing: .2rem;
+  font-weight: 500; }
+
+h6 {
+  font-family: "Roboto", helvetica, sans-serif;
+  line-height: 1.25;
+  margin: 1em 0 0.5em 0;
+  text-rendering: optimizeLegibility;
+  font-size: 8.333333335px;
+  font-size: 0.8333333335em;
+  letter-spacing: .2rem;
+  font-weight: 500; }
+
+pre {
+  font-family: monospace;
+  font-size: 14.5px;
+  font-size: 1.45em;
+  margin: 0 0 1em 0; }
+
+blockquote {
+  font-family: "Libre Baskerville", serif;
+  font-size: 18px;
+  font-size: 1.8em;
+  font-style: italic;
+  margin: 1em 0;
+  border-left: 2px solid #2d2d2d;
+  padding-left: 1em; }
+
+ul, ol {
+  font-family: "Libre Baskerville", serif;
+  font-size: 16px;
+  font-size: 1.6em; }
 
 .content {
   margin: 0 auto;

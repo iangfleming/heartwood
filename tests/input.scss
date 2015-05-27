@@ -6,15 +6,29 @@ html {
 }
 
 section {
-  @include module-type(1);
+  @include module-type;
 }
 
 p {
   @include p;
 }
 
-h1 {
-  @include h(3);
+@for $i from 1 through 6 {
+  h#{$i} {
+    @include h($i);
+  }
+}
+
+pre {
+  @include code;
+}
+
+blockquote {
+  @include blockquote(border);
+}
+
+ul, ol {
+  @include list;
 }
 
 .content {
