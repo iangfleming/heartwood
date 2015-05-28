@@ -1,0 +1,21 @@
+{
+  "name": "Sassy Type",
+  "version": "1.0.0",
+  "homepage": "https://github.com/iangfleming/sassy-type",
+  "authors": [
+    "iangfleming <fyedka2@gmail.com>"
+  ],
+  "description": "A pure Scss typography framework",
+  "main": "awesome.scss",
+  "license": "MIT",
+  "dependencies": {
+    "modular-scale": "https://github.com/modularscale/modularscale-sass"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

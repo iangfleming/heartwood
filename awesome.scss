@@ -1,18 +1,14 @@
 // do work here
 // based on this article https://css-tricks.com/rems-ems/
-@import 'modular-scale';
+@import 'bower_components/modular-scale/stylesheets/modular-scale';
 @import 'config';
-
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
-@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 
 // Defaults
 $base-font-size: 62.5% !default;
 $body-copy-color: #2d2d2d !default;
 $headings-font-family: 'Roboto', helvetica, sans-serif !default;
 $body-font-family: 'Roboto', helvetica, sans-serif !default;
-$code-font-family: 'Roboto', helvetica, sans-serif !default;
+$code-font-family: 'Source Sans Pro', monospace, sans-serif !default;
 $type-margins: true !default;
 $ms-base: .35em;
 @if $ms-ratio == null {
@@ -33,7 +29,7 @@ $ms-base: .35em;
     font-size: $base-font-size * .95;
   }
   @media (max-width: 400px) {
-    font-size: $base-font-size * .85;
+    font-size: $base-font-size * .90;
   }
 }
 
@@ -111,7 +107,7 @@ $ms-base: .35em;
 }
 
 @mixin code {
-  font-family: monospace;
+  font-family: $code-font-family;
   @include element-type(1.45);
   @include margin(0 0 1em 0);
 }
