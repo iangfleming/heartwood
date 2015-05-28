@@ -14,9 +14,9 @@ $headings-font-family: 'Roboto', helvetica, sans-serif !default;
 $body-font-family: 'Roboto', helvetica, sans-serif !default;
 $code-font-family: 'Roboto', helvetica, sans-serif !default;
 $type-margins: true !default;
-$ms-base: .5em;
+$ms-base: .35em;
 @if $ms-ratio == null {
-  $ms-ratio: $minor-sixth;
+  $ms-ratio: $fifth;
 }
 // Strip units so that the result
 // can be used with em's and px's
