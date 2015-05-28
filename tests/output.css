@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
 @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
 html {
   font-size: 62.5%;
   color: #2d2d2d; }
@@ -9,7 +10,7 @@ html {
       font-size: 59.375%; } }
   @media (max-width: 400px) {
     html {
-      font-size: 53.125%; } }
+      font-size: 56.25%; } }
 
 section {
   font-size: 10px;
@@ -86,7 +87,7 @@ h6 {
   font-weight: 400; }
 
 pre {
-  font-family: monospace;
+  font-family: "Source Sans Pro", monospace, sans-serif;
   font-size: 14.5px;
   font-size: 1.45em;
   margin: 0 0 1em 0; }

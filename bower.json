@@ -1,0 +1,21 @@
+{
+  "name": "Heartwood",
+  "version": "1.0.0",
+  "homepage": "https://github.com/iangfleming/heartwood",
+  "authors": [
+    "iangfleming <fyedka2@gmail.com>"
+  ],
+  "description": "A framework of Scss mixins to create a typographic foundation for your project",
+  "main": "heartwood.scss",
+  "license": "MIT",
+  "dependencies": {
+    "modular-scale": "https://github.com/modularscale/modularscale-sass"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
