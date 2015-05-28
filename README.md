@@ -32,5 +32,5 @@ p {
 ```
 
 This allows type to scale together or seperately depending on your
-needs.
-https://css-tricks.com/rems-ems
+needs. I first encountered this idea here https://css-tricks.com/rems-ems
+described by Chris Coyier.
