@@ -1,6 +1,41 @@
 @import '../awesome';
 // write tests here
 
-* {
-  @include sassy-type(body);
+html {
+  @include document-type();
+}
+
+section {
+  @include module-type;
+}
+
+p {
+  @include p;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    @include h($i);
+  }
+}
+
+pre {
+  @include code;
+}
+
+blockquote {
+  @include blockquote(border);
+}
+
+ul, ol {
+  @include list;
+}
+
+hr {
+  @include hr;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 500px;
 }

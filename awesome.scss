@@ -1,7 +1,151 @@
 // do work here
+// based on this article https://css-tricks.com/rems-ems/
+@import 'modular-scale';
+@import 'config';
 
-@mixin sassy-type($value) {
-  @if $value == 'body' {
-    font-size: 1rem;
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+
+// Defaults
+$base-font-size: 62.5% !default;
+$body-copy-color: #2d2d2d !default;
+$headings-font-family: 'Roboto', helvetica, sans-serif !default;
+$body-font-family: 'Roboto', helvetica, sans-serif !default;
+$code-font-family: 'Roboto', helvetica, sans-serif !default;
+$type-margins: true !default;
+$ms-base: .35em;
+@if $ms-ratio == null {
+  $ms-ratio: $fifth;
+}
+// Strip units so that the result
+// can be used with em's and px's
+@function su($number) {
+  @return $number / ($number * 0 + 1);
+}
+// @debug ms-list(1, 6, $ms-base, $ms-ratio);
+
+@mixin document-type() {
+  font-size: $base-font-size;
+  color: $body-copy-color;
+
+  @media (max-width: 900px) {
+    font-size: $base-font-size * .95;
   }
+  @media (max-width: 400px) {
+    font-size: $base-font-size * .85;
+  }
+}
+
+@mixin module-type( $font-size-multiplier: 1 ) {
+  font-size: $font-size-multiplier * 10px;
+  font-size: $font-size-multiplier + rem;
+}
+
+@mixin element-type( $font-size-multiplier: 1.6 ) {
+  font-size: $font-size-multiplier * 10px;
+  font-size: $font-size-multiplier + em;
+}
+
+// Mixin to remove margins from headings
+// and p elements if $no-type-margins is true
+@mixin margin($margin...) {
+  @if $no-type-margins == true {
+    margin: 0;
+  }
+  @else {
+    margin: $margin;
+  }
+}
+
+
+@mixin p($font-size-multiplier: 1.6) {
+  font-family: $body-font-family;
+  @include element-type($font-size-multiplier);
+  letter-spacing: .01rem;
+  font-weight: 400;
+  line-height: 1.5;
+  @include margin(0 0 1em 0);
+  text-rendering: optimizeSpeed;
+}
+
+@mixin h($heading-level, $heading-weight: 400) {
+    font-family: $headings-font-family;
+    line-height: 1.25;
+    @include margin(1em 0 .5em 0);
+    text-rendering: optimizeLegibility;
+
+    @if $heading-level == 1 {
+      @include element-type(su(ms(6)));
+      letter-spacing: .2rem;
+      font-weight: $heading-weight;
+    }
+    @else if $heading-level == 2 {
+      @include element-type(su(ms(5)));
+      letter-spacing: .2rem;
+      font-weight: $heading-weight;
+    }
+    @else if $heading-level == 3 {
+      @include element-type(su(ms(4)));
+      letter-spacing: .2rem;
+      font-weight: $heading-weight;
+    }
+    @else if $heading-level == 4 {
+      @include element-type(su(ms(3)));
+      letter-spacing: .2rem;
+      font-weight: $heading-weight;
+    }
+    @else if $heading-level == 5 {
+      @include element-type(su(ms(2)));
+      letter-spacing: .2rem;
+      font-weight: $heading-weight;
+    }
+    @else if $heading-level == 6 {
+      @include element-type(su(ms(1)));
+      letter-spacing: .2rem;
+      font-weight: $heading-weight;
+    }
+    @else {
+      @error "Please provide a valid heading value between 1 and 6";
+    }
+}
+
+@mixin code {
+  font-family: monospace;
+  @include element-type(1.45);
+  @include margin(0 0 1em 0);
+}
+
+@mixin hr {
+  margin: 1em 0;
+  border-style: solid;
+  color: currentColor;
+}
+
+@mixin blockquote($decoration: '') {
+  font-family: $body-font-family;
+  @include element-type(1.8);
+  font-style: italic;
+  @include margin(1em 0);
+  @if $decoration == border {
+    border-left: 2px solid $body-copy-color;
+    padding-left: 1em;
+  }
+  @else if $decoration == quote {
+    &:before {
+      content: "\201C";
+      @include element-type(2);
+      margin-left: -15px;
+    }
+  }
+}
+
+@mixin list {
+  font-family: $body-font-family;
+  @include element-type;
+}
+
+@mixin list-reset {
+  list-style: none;
+  padding-left: 0;
 }
