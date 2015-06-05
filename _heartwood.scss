@@ -77,7 +77,7 @@ $ms-base: .35em;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) $offset, $color $offset, $color $offset + $weight, rgba(0, 0, 0, 0) $offset + $weight);
 }
 
-@mixin a($fancy-underlines: true, $font-size-multiplier: 1.8) {
+@mixin a($underlines: fancy, $font-size-multiplier: 1.8) {
   font-family: $body-font-family;
   @include module-type($font-size-multiplier);
   color: $body-copy-color;
@@ -88,7 +88,7 @@ $ms-base: .35em;
   text-rendering: optimizeSpeed;
   cursor: pointer;
 
-  @if $fancy-underlines == true {
+  @if $underlines == fancy {
     text-decoration: none;
     text-shadow: -1px -1px 0 $background-color, 1px -1px 0 $background-color, -1px 1px 0 $background-color, 1px 1px 0 $background-color;
     }
@@ -102,10 +102,11 @@ $ms-base: .35em;
         @include underline($link-color-active, 0.5);
       }
     }
-  @else {
+  @else if $underlines == simple {
     text-decoration: underline;
-  &:hover {
-  }
+    &:hover {
+      color: $link-color-active;
+    }
   }
 }
 

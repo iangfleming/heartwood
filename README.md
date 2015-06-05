@@ -109,3 +109,26 @@ p {
   text-rendering: optimizeSpeed;
 }
 ```
+### Links & Fancy Underlines
+
+Basic underlines on the web are pretty crappy. To fix this Heartwood
+is using background-images and text-shadows. I first read about this
+idea in this [ article ](https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9')
+by Medium's design team. 
+
+To use...
+
+```
+a {
+  @include a;
+}
+```
+
+If the fancy underlines are too much for you or don't suit your
+project you can simply do this.
+
+```
+a {
+  @include a(simple);
+}
+```
