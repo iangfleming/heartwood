@@ -1,10 +1,19 @@
 // based on this article https://css-tricks.com/rems-ems/
 @import 'bower_components/modular-scale/stylesheets/modular-scale';
-@import 'config';
+@import 'heartwood-config';
 
 // Defaults
 $base-font-size: 62.5% !default;
 $body-copy-color: #2d2d2d !default;
+
+$background-color: white !default;
+$link-color: $body-copy-color !default;
+$link-color-active: lighten($body-copy-color, 10%) !default;
+$link-underline-color: $link-color !default;
+$link-underline-color-active: $link-color-active !default;
+$link-underline-width: 1px !default;
+$link-underline-offset: 2px !default;
+
 $headings-font-family: 'Roboto', helvetica, sans-serif !default;
 $body-font-family: 'Roboto', helvetica, sans-serif !default;
 $code-font-family: 'Source Sans Pro', monospace, sans-serif !default;
@@ -54,7 +63,7 @@ $ms-base: .35em;
 }
 
 
-@mixin p($font-size-multiplier: 1.6) {
+@mixin p($font-size-multiplier: 1.8) {
   font-family: $body-font-family;
   @include element-type($font-size-multiplier);
   letter-spacing: .01rem;
@@ -62,6 +71,42 @@ $ms-base: .35em;
   line-height: 1.5;
   @include margin(0 0 1em 0);
   text-rendering: optimizeSpeed;
+}
+
+@mixin underline($color: $link-underline-color, $weight: $link-underline-width, $offset: $link-underline-offset) {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) $offset, $color $offset, $color $offset + $weight, rgba(0, 0, 0, 0) $offset + $weight);
+}
+
+@mixin a($fancy-underlines: true, $font-size-multiplier: 1.8) {
+  font-family: $body-font-family;
+  @include module-type($font-size-multiplier);
+  color: $body-copy-color;
+  letter-spacing: .01rem;
+  font-weight: 400;
+  line-height: 1.5;
+  @include margin(0 0 1em 0);
+  text-rendering: optimizeSpeed;
+  cursor: pointer;
+
+  @if $fancy-underlines == true {
+    text-decoration: none;
+    text-shadow: -1px -1px 0 $background-color, 1px -1px 0 $background-color, -1px 1px 0 $background-color, 1px 1px 0 $background-color;
+    }
+    @include underline($link-color);
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+      @include underline($link-color, 0.5);
+    }
+    &:hover, &:focus {
+      @include underline($link-color-active);
+      @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+        @include underline($link-color-active, 0.5);
+      }
+    }
+  @else {
+    text-decoration: underline;
+  &:hover {
+  }
+  }
 }
 
 @mixin h($heading-level, $heading-weight: 400) {
@@ -77,27 +122,25 @@ $ms-base: .35em;
     }
     @else if $heading-level == 2 {
       @include element-type(su(ms(5)));
-      letter-spacing: .2rem;
+      letter-spacing: .15rem;
       font-weight: $heading-weight;
     }
     @else if $heading-level == 3 {
       @include element-type(su(ms(4)));
-      letter-spacing: .2rem;
+      letter-spacing: .05rem;
       font-weight: $heading-weight;
     }
     @else if $heading-level == 4 {
       @include element-type(su(ms(3)));
-      letter-spacing: .2rem;
+      letter-spacing: .02rem;
       font-weight: $heading-weight;
     }
     @else if $heading-level == 5 {
       @include element-type(su(ms(2)));
-      letter-spacing: .2rem;
       font-weight: $heading-weight;
     }
     @else if $heading-level == 6 {
       @include element-type(su(ms(1)));
-      letter-spacing: .2rem;
       font-weight: $heading-weight;
     }
     @else {
