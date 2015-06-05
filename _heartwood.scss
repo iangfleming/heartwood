@@ -91,7 +91,6 @@ $ms-base: .35em;
   @if $underlines == fancy {
     text-decoration: none;
     text-shadow: -1px -1px 0 $background-color, 1px -1px 0 $background-color, -1px 1px 0 $background-color, 1px 1px 0 $background-color;
-    }
     @include underline($link-color);
     @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
       @include underline($link-color, 0.5);
@@ -102,6 +101,7 @@ $ms-base: .35em;
         @include underline($link-color-active, 0.5);
       }
     }
+  }
   @else if $underlines == simple {
     text-decoration: underline;
     &:hover {

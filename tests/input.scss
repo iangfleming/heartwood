@@ -1,4 +1,4 @@
-@import '../awesome';
+@import '../heartwood';
 // write tests here
 
 html {
@@ -11,6 +11,10 @@ section {
 
 p {
   @include p;
+}
+
+a {
+  @include a;
 }
 
 @for $i from 1 through 6 {

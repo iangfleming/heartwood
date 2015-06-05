@@ -18,13 +18,36 @@ section {
 
 p {
   font-family: "Roboto", helvetica, sans-serif;
-  font-size: 16px;
-  font-size: 1.6em;
+  font-size: 18px;
+  font-size: 1.8em;
   letter-spacing: .01rem;
   font-weight: 400;
   line-height: 1.5;
   margin: 0 0 1em 0;
   text-rendering: optimizeSpeed; }
+
+a {
+  font-family: "Roboto", helvetica, sans-serif;
+  font-size: 18px;
+  font-size: 1.8rem;
+  color: #2d2d2d;
+  letter-spacing: .01rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 0 1em 0;
+  text-rendering: optimizeSpeed;
+  cursor: pointer;
+  text-decoration: none;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+  background-image: linear-gradient(to top, transparent, transparent 2px, #2d2d2d 2px, #2d2d2d 3px, transparent 3px); }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    a {
+      background-image: linear-gradient(to top, transparent, transparent 2px, #2d2d2d 2px, #2d2d2d 2.5px, transparent 2.5px); } }
+  a:hover, a:focus {
+    background-image: linear-gradient(to top, transparent, transparent 2px, #474747 2px, #474747 3px, transparent 3px); }
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+      a:hover, a:focus {
+        background-image: linear-gradient(to top, transparent, transparent 2px, #474747 2px, #474747 2.5px, transparent 2.5px); } }
 
 h1 {
   font-family: "Roboto", helvetica, sans-serif;
@@ -43,7 +66,7 @@ h2 {
   text-rendering: optimizeLegibility;
   font-size: 26.578125px;
   font-size: 2.6578125em;
-  letter-spacing: .2rem;
+  letter-spacing: .15rem;
   font-weight: 400; }
 
 h3 {
@@ -53,7 +76,7 @@ h3 {
   text-rendering: optimizeLegibility;
   font-size: 17.71875px;
   font-size: 1.771875em;
-  letter-spacing: .2rem;
+  letter-spacing: .05rem;
   font-weight: 400; }
 
 h4 {
@@ -63,7 +86,7 @@ h4 {
   text-rendering: optimizeLegibility;
   font-size: 11.8125px;
   font-size: 1.18125em;
-  letter-spacing: .2rem;
+  letter-spacing: .02rem;
   font-weight: 400; }
 
 h5 {
@@ -73,7 +96,6 @@ h5 {
   text-rendering: optimizeLegibility;
   font-size: 7.875px;
   font-size: 0.7875em;
-  letter-spacing: .2rem;
   font-weight: 400; }
 
 h6 {
@@ -83,7 +105,6 @@ h6 {
   text-rendering: optimizeLegibility;
   font-size: 5.25px;
   font-size: 0.525em;
-  letter-spacing: .2rem;
   font-weight: 400; }
 
 pre {
