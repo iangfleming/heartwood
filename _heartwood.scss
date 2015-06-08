@@ -73,6 +73,19 @@ $ms-base: .35em;
   text-rendering: optimizeSpeed;
 }
 
+@mixin dropcap($drop-lines, $drop-line-height) {
+  $drop-size : $drop-line-height * $drop-lines;
+  &:first-child:first-letter {
+    font-size: #{$drop-size+'em'};
+    vertical-align: bottom;
+    float: left;
+    line-height: 0.9;
+    margin-right: 0.5rem;
+    margin-left: -0.05rem;
+    margin-top: -0.05rem;
+  }
+}
+
 @mixin underline($color: $link-underline-color, $weight: $link-underline-width, $offset: $link-underline-offset) {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) $offset, $color $offset, $color $offset + $weight, rgba(0, 0, 0, 0) $offset + $weight);
 }
