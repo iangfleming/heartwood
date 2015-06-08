@@ -5,6 +5,37 @@
 To provide a solid typographic core for projects
 using scss.
 
+## List of Functions
+
+Set type options for different levels of the document
+
+```
+@mixin document-type
+@mixin module-type
+@mixin element-type
+```
+
+Allows margins on ALL type mixins to be turned off
+
+```
+@mixin margin
+```
+
+These should be self explanatory
+
+```
+@mixin p
+@mixin dropcap
+@mixin a
+@mixin underline
+@mixin h
+@mixin code
+@mixin hr
+@mixin blockquote
+@mixin list
+@mixin list-reset
+```
+
 ## Use
 
 1: Install via Bower or [download](https://github.com/iangfleming/heartwood/archive/master.zip) the zip.
@@ -132,3 +163,4 @@ a {
   @include a(simple);
 }
 ```
+
