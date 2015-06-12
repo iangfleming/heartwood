@@ -6,7 +6,7 @@
 $base-font-size: 62.5% !default;
 $body-copy-color: #2d2d2d !default;
 
-$background-color: white !default;
+$underline-background-color: white !default;
 $link-color: $body-copy-color !default;
 $link-color-active: lighten($body-copy-color, 10%) !default;
 $link-underline-color: $link-color !default;
@@ -103,7 +103,7 @@ $ms-base: .35em;
 
   @if $underlines == fancy {
     text-decoration: none;
-    text-shadow: -1px -1px 0 $background-color, 1px -1px 0 $background-color, -1px 1px 0 $background-color, 1px 1px 0 $background-color;
+    text-shadow: -1px -1px 0 $underline-background-color, 1px -1px 0 $underline-background-color, -1px 1px 0 $underline-background-color, 1px 1px 0 $underline-background-color;
     @include underline($link-color);
     @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
       @include underline($link-color, 0.5);
