@@ -32,13 +32,6 @@ $ms-base: .35em;
 @mixin document-type() {
   font-size: $base-font-size;
   color: $body-copy-color;
-
-  @media (max-width: 900px) {
-    font-size: $base-font-size * .95;
-  }
-  @media (max-width: 400px) {
-    font-size: $base-font-size * .90;
-  }
 }
 
 @mixin module-type( $font-size-multiplier: 1 ) {
@@ -86,8 +79,24 @@ $ms-base: .35em;
   }
 }
 
-@mixin underline($color: $link-underline-color, $weight: $link-underline-width, $offset: $link-underline-offset) {
+@mixin fancy-underlines-bg($color: $link-underline-color, $weight: $link-underline-width, $offset: $link-underline-offset) {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) $offset, $color $offset, $color $offset + $weight, rgba(0, 0, 0, 0) $offset + $weight);
+}
+
+@mixin fancy-underlines ($color: $link-underline-color, $weight: $link-underline-width, $offset: $link-underline-offset) {
+  text-decoration: none;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) $offset, $color $offset, $color $offset + $weight, rgba(0, 0, 0, 0) $offset + $weight);
+  text-shadow: -1px -1px 0 $underline-background-color, 1px -1px 0 $underline-background-color, -1px 1px 0 $underline-background-color, 1px 1px 0 $underline-background-color;
+  @include fancy-underlines-bg($link-color);
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    @include fancy-underline-bg($link-color, 0.5);
+  }
+  &:hover, &:focus {
+    @include fancy-underlines-bg($link-color-active);
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+      @include fancy-underlines-bg($link-color-active, 0.5);
+    }
+  }
 }
 
 @mixin a($underlines: fancy, $font-size-multiplier: 1.8) {
@@ -102,18 +111,7 @@ $ms-base: .35em;
   cursor: pointer;
 
   @if $underlines == fancy {
-    text-decoration: none;
-    text-shadow: -1px -1px 0 $underline-background-color, 1px -1px 0 $underline-background-color, -1px 1px 0 $underline-background-color, 1px 1px 0 $underline-background-color;
-    @include underline($link-color);
-    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-      @include underline($link-color, 0.5);
-    }
-    &:hover, &:focus {
-      @include underline($link-color-active);
-      @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-        @include underline($link-color-active, 0.5);
-      }
-    }
+    @include fancy-underlines;
   }
   @else if $underlines == simple {
     text-decoration: underline;

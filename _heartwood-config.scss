@@ -1,14 +1,76 @@
+// Default fonts. Add these link tags to your page.
+// If you'd like to use them.
+// Html
+// <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic">
+// <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic">
+// <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic">
+// <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Code+Pro">
+// or Haml
+// %link(rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic")
+// %link(rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic")
+// %link(rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic")
+// %link(rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Code+Pro")
 // If you'd like to change the defaults do so here;
+
+// Set your fonts here!
+// $headings-font-family: 'Roboto', helvetica, sans-serif !default;
 $headings-font-family: null;
+// $body-font-family: 'Roboto', helvetica, sans-serif !default;
 $body-font-family: null;
+// $code-font-family: 'Source Sans Pro', monospace, sans-serif !default;
 $code-font-family: null;
-$base-font-size: null;
-$no-type-margins: null;
-$ms-base: null;
-$ms-ratio: null;
+
+// Set the body copy color here.
+// $body-copy-color: #2d2d2d !default;
 $body-copy-color: null;
 
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
-@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
+// Modular Scale options.
+// Headings are calcuted based on a modular scale.
+//
+// This is the value from which the scale is based.
+// Higher value for bigger headings.
+// $ms-base: .35em;
+$ms-base: null;
+// This sets the ratio on which the scale is based.
+// Here are the other options: https://github.com/modularscale/modularscale-sass#ratios
+// $ms-ratio: $fifth !default;
+$ms-ratio: null;
+
+// Options for fancy underlines
+//
+// This MUST be set to the color of the background
+// on which the link is set!
+// $underline-background-color: white !default;
+$underline-background-color: null;
+// This is the color of your link.
+// $link-color: $body-copy-color !default;
+$link-color: null;
+// This is the color of your link when active.
+// $link-color-active: lighten($body-copy-color, 10%) !default;
+$link-color-active: null;
+// This is the color of the link underline.
+// By default is is set to be the same
+// as the link color.
+// $link-underline-color: $link-color !default;
+$link-underline-color: null;
+// Color of active link underlines.
+// $link-underline-color-active: $link-color-active !default;
+$link-underline-color-active: null;
+// This is the width of the underline
+// $link-underline-width: 1px !default;
+$link-underline-width: null;
+// This is space between the baseline
+// and the underline.
+// $link-underline-offset: 2px !default;
+$link-underline-offset: null;
+
+// Be careful changing these options!
+//
+// $base-font-size: 62.5% !default;
+// This is to set 1em equal to 10px
+// to make the math easier
+$base-font-size: null;
+// $type-margins: true !default;
+// By default margins are set on text elements
+// you can turn them off by setting this to false
+$type-margins: null;
