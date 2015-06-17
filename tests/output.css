@@ -1,7 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
-@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
 html {
   font-size: 62.5%;
   color: #2d2d2d; }
@@ -38,6 +34,7 @@ a {
   text-rendering: optimizeSpeed;
   cursor: pointer;
   text-decoration: none;
+  background-image: linear-gradient(to top, transparent, transparent 2px, #2d2d2d 2px, #2d2d2d 3px, transparent 3px);
   text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
   background-image: linear-gradient(to top, transparent, transparent 2px, #2d2d2d 2px, #2d2d2d 3px, transparent 3px); }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
@@ -54,8 +51,8 @@ h1 {
   line-height: 1.25;
   margin: 1em 0 0.5em 0;
   text-rendering: optimizeLegibility;
-  font-size: 39.8671875px;
-  font-size: 3.98671875em;
+  font-size: 39.86719px;
+  font-size: 3.98672em;
   letter-spacing: .2rem;
   font-weight: 400; }
 
@@ -64,8 +61,8 @@ h2 {
   line-height: 1.25;
   margin: 1em 0 0.5em 0;
   text-rendering: optimizeLegibility;
-  font-size: 26.578125px;
-  font-size: 2.6578125em;
+  font-size: 26.57812px;
+  font-size: 2.65781em;
   letter-spacing: .15rem;
   font-weight: 400; }
 
@@ -75,7 +72,7 @@ h3 {
   margin: 1em 0 0.5em 0;
   text-rendering: optimizeLegibility;
   font-size: 17.71875px;
-  font-size: 1.771875em;
+  font-size: 1.77187em;
   letter-spacing: .05rem;
   font-weight: 400; }
 
