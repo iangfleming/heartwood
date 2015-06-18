@@ -28,7 +28,12 @@ For more details visit the [site](http://ianfleming.me/heartwood)
 
 ## Use
 
+```
+bower install heartwood
+```
+
+or
+
 [Download](https://github.com/iangfleming/heartwood/archive/master.zip) the zip or clone this repo.
-Bower package is coming soon.
 
 For more details visit the [site](http://ianfleming.me/heartwood)
