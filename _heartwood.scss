@@ -5,7 +5,7 @@
 $base-font-size: 62.5% !default;
 $body-copy-color: #2d2d2d !default;
 
-$underline-background-color: white !default;
+$underline-background-color: #fff !default;
 $link-color: $body-copy-color !default;
 $link-color-active: lighten($body-copy-color, 10%) !default;
 $link-underline-color: $link-color !default;
@@ -17,18 +17,15 @@ $headings-font-family: 'Roboto', helvetica, sans-serif !default;
 $body-font-family: 'Roboto', helvetica, sans-serif !default;
 $code-font-family: 'Source Sans Pro', monospace, sans-serif !default;
 $type-margins: true !default;
-$ms-base: .35em;
-@if $ms-ratio == null {
-  $ms-ratio: $fifth;
-}
+$ms-base: 1em ;
+$ms-ratio: $fourth ;
+
 // Strip units so that the result
 // can be used with em's and px's
 @function su($number) {
   @return $number / ($number * 0 + 1);
 }
 // @debug ms-list(1, 6, $ms-base, $ms-ratio);
-
-@import 'heartwood-config';
 
 @mixin document-type() {
   font-size: $base-font-size;
@@ -55,7 +52,6 @@ $ms-base: .35em;
     margin: $margin;
   }
 }
-
 
 @mixin p($font-size-multiplier: 1.8) {
   font-family: $body-font-family;
@@ -127,32 +123,33 @@ $ms-base: .35em;
     @include margin(1em 0 .5em 0);
     text-rendering: optimizeLegibility;
 
+
     @if $heading-level == 1 {
-      @include element-type(su(ms(6)));
+      @include element-type(su(ms(5)));
       letter-spacing: .2rem;
       font-weight: $heading-weight;
     }
     @else if $heading-level == 2 {
-      @include element-type(su(ms(5)));
+      @include element-type(su(ms(4)));
       letter-spacing: .15rem;
       font-weight: $heading-weight;
     }
     @else if $heading-level == 3 {
-      @include element-type(su(ms(4)));
+      @include element-type(su(ms(3)));
       letter-spacing: .05rem;
       font-weight: $heading-weight;
     }
     @else if $heading-level == 4 {
-      @include element-type(su(ms(3)));
+      @include element-type(su(ms(2)));
       letter-spacing: .02rem;
       font-weight: $heading-weight;
     }
     @else if $heading-level == 5 {
-      @include element-type(su(ms(2)));
+      @include element-type(su(ms(1)));
       font-weight: $heading-weight;
     }
     @else if $heading-level == 6 {
-      @include element-type(su(ms(1)));
+      @include element-type(su(ms(0)));
       font-weight: $heading-weight;
     }
     @else {
