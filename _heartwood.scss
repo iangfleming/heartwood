@@ -117,44 +117,47 @@ $ms-ratio: $fourth ;
   }
 }
 
+%h-static {
+  font-family: $headings-font-family;
+  line-height: 1.25;
+  @include margin(1em 0 .5em 0);
+  text-rendering: optimizeLegibility;
+}
+
 @mixin h($heading-level, $heading-weight: 400) {
-    font-family: $headings-font-family;
-    line-height: 1.25;
-    @include margin(1em 0 .5em 0);
-    text-rendering: optimizeLegibility;
+  @extend %h-static;
 
-
-    @if $heading-level == 1 {
-      @include element-type(su(ms(5)));
-      letter-spacing: .2rem;
-      font-weight: $heading-weight;
-    }
-    @else if $heading-level == 2 {
-      @include element-type(su(ms(4)));
-      letter-spacing: .15rem;
-      font-weight: $heading-weight;
-    }
-    @else if $heading-level == 3 {
-      @include element-type(su(ms(3)));
-      letter-spacing: .05rem;
-      font-weight: $heading-weight;
-    }
-    @else if $heading-level == 4 {
-      @include element-type(su(ms(2)));
-      letter-spacing: .02rem;
-      font-weight: $heading-weight;
-    }
-    @else if $heading-level == 5 {
-      @include element-type(su(ms(1)));
-      font-weight: $heading-weight;
-    }
-    @else if $heading-level == 6 {
-      @include element-type(su(ms(0)));
-      font-weight: $heading-weight;
-    }
-    @else {
-      @error "Please provide a valid heading value between 1 and 6";
-    }
+  @if $heading-level == 1 {
+    @include element-type(su(ms(5)));
+    letter-spacing: .2rem;
+    font-weight: $heading-weight;
+  }
+  @else if $heading-level == 2 {
+    @include element-type(su(ms(4)));
+    letter-spacing: .15rem;
+    font-weight: $heading-weight;
+  }
+  @else if $heading-level == 3 {
+    @include element-type(su(ms(3)));
+    letter-spacing: .05rem;
+    font-weight: $heading-weight;
+  }
+  @else if $heading-level == 4 {
+    @include element-type(su(ms(2)));
+    letter-spacing: .02rem;
+    font-weight: $heading-weight;
+  }
+  @else if $heading-level == 5 {
+    @include element-type(su(ms(1)));
+    font-weight: $heading-weight;
+  }
+  @else if $heading-level == 6 {
+    @include element-type(su(ms(0)));
+    font-weight: $heading-weight;
+  }
+  @else {
+    @error "Please provide a valid heading value between 1 and 6";
+  }
 }
 
 @mixin code {
