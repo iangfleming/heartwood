@@ -1,7 +1,7 @@
 // based on this article https://css-tricks.com/rems-ems/
 @import 'bower_components/modular-scale/stylesheets/modular-scale';
 
-// Defaults
+// DEFAULTS
 $base-font-size: 62.5% !default;
 $body-copy-color: #2d2d2d !default;
 
@@ -17,19 +17,45 @@ $headings-font-family: 'Roboto', helvetica, sans-serif !default;
 $body-font-family: 'Roboto', helvetica, sans-serif !default;
 $code-font-family: 'Source Sans Pro', monospace, sans-serif !default;
 $type-margins: true !default;
-$ms-base: 1em ;
-$ms-ratio: $fourth ;
+$ms-base: 1.9em;
+$ms-ratio: $fourth;
+// @debug ms-list(1, 6, $ms-base, $ms-ratio);
 
+
+// HELPERS
 // Strip units so that the result
 // can be used with em's and px's
 @function su($number) {
   @return $number / ($number * 0 + 1);
 }
-// @debug ms-list(1, 6, $ms-base, $ms-ratio);
 
-@mixin document-type() {
+// Mixin to remove margins from
+// elements if $type-margins is false
+@mixin margin($margin...) {
+  @if $type-margins == false {
+    margin: 0;
+  }
+  @else {
+    margin: $margin;
+  }
+}
+
+
+// SIZE
+@mixin document-type($scale: '') {
+  font-family: $body-font-family;
   font-size: $base-font-size;
+  font-weight: 400;
+  line-height: 1.5;
   color: $body-copy-color;
+  @if $scale == responsive {
+    @media (max-width: 900px) {
+      font-size: $base-font-size * .95;
+    }
+    @media (max-width: 400px) {
+      font-size: $base-font-size * .90;
+    }
+  }
 }
 
 @mixin module-type( $font-size-multiplier: 1 ) {
@@ -42,37 +68,103 @@ $ms-ratio: $fourth ;
   font-size: $font-size-multiplier + em;
 }
 
-// Mixin to remove margins from headings
-// and p elements if $type-margins is true
-@mixin margin($margin...) {
-  @if $type-margins == false {
-    margin: 0;
-  }
-  @else {
-    margin: $margin;
-  }
-}
-
+// ELEMENTS
 @mixin p($font-size-multiplier: 1.8) {
-  font-family: $body-font-family;
   @include element-type($font-size-multiplier);
-  letter-spacing: .01rem;
-  font-weight: 400;
-  line-height: 1.5;
   @include margin(0 0 1em 0);
   text-rendering: optimizeSpeed;
 }
 
+@mixin a($underlines: fancy, $font-size-multiplier: 1.8) {
+  @include module-type($font-size-multiplier);
+  color: $link-color;
+  @include margin(0 0 1em 0);
+  cursor: pointer;
+
+  @if $underlines == fancy {
+    @include fancy-underlines;
+  }
+  @else if $underlines == simple {
+    text-decoration: underline;
+    &:hover {
+      color: $link-color-active;
+    }
+  }
+
+  &:visited {
+    color: lighten($link-color, 15%);
+  }
+}
+
+%h-static {
+  font-family: $headings-font-family;
+  line-height: 1.25;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin h($heading-level, $heading-weight: 400, $heading-margin: '') {
+  @extend %h-static;
+
+  @if $heading-level == 1 {
+    @include element-type(su(ms(5)));
+    font-weight: $heading-weight;
+    @if $heading-margin == no-margin {
+      margin: 0;
+    }
+    @else {
+      @include margin(1em 0 .5em 0);
+    }
+  }
+  @else if $heading-level == 2 {
+    @include element-type(su(ms(4)));
+    font-weight: $heading-weight;
+  }
+  @else if $heading-level == 3 {
+    @include element-type(su(ms(3)));
+    font-weight: $heading-weight;
+  }
+  @else if $heading-level == 4 {
+    @include element-type(su(ms(2)));
+    font-weight: $heading-weight;
+  }
+  @else if $heading-level == 5 {
+    @include element-type(su(ms(1)));
+    font-weight: $heading-weight;
+  }
+  @else if $heading-level == 6 {
+    @include element-type(su(ms(0)));
+    font-weight: $heading-weight;
+  }
+  @else {
+    @error "Please provide a valid heading value between 1 and 6";
+  }
+}
+
+@mixin code {
+  font-family: $code-font-family;
+  @include element-type(1.45);
+  @include margin(0 0 1em 0);
+}
+@mixin list {
+  font-family: $body-font-family;
+  @include element-type;
+}
+
+@mixin list-reset {
+  list-style: none;
+  padding-left: 0;
+}
+
+// DECORATIONS
 @mixin dropcap($drop-lines, $drop-line-height) {
   $drop-size : $drop-line-height * $drop-lines;
-  &:first-child:first-letter {
+  &:first-letter {
     font-size: #{$drop-size+'em'};
     vertical-align: bottom;
     float: left;
     line-height: 0.9;
-    margin-right: 0.5rem;
+    margin-right: 0.4rem;
     margin-left: -0.05rem;
-    margin-top: -0.05rem;
   }
 }
 
@@ -95,79 +187,8 @@ $ms-ratio: $fourth ;
   }
 }
 
-@mixin a($underlines: fancy, $font-size-multiplier: 1.8) {
-  font-family: $body-font-family;
-  @include module-type($font-size-multiplier);
-  color: $body-copy-color;
-  letter-spacing: .01rem;
-  font-weight: 400;
-  line-height: 1.5;
-  @include margin(0 0 1em 0);
-  text-rendering: optimizeSpeed;
-  cursor: pointer;
-
-  @if $underlines == fancy {
-    @include fancy-underlines;
-  }
-  @else if $underlines == simple {
-    text-decoration: underline;
-    &:hover {
-      color: $link-color-active;
-    }
-  }
-}
-
-%h-static {
-  font-family: $headings-font-family;
-  line-height: 1.25;
-  @include margin(1em 0 .5em 0);
-  text-rendering: optimizeLegibility;
-}
-
-@mixin h($heading-level, $heading-weight: 400) {
-  @extend %h-static;
-
-  @if $heading-level == 1 {
-    @include element-type(su(ms(5)));
-    letter-spacing: .2rem;
-    font-weight: $heading-weight;
-  }
-  @else if $heading-level == 2 {
-    @include element-type(su(ms(4)));
-    letter-spacing: .15rem;
-    font-weight: $heading-weight;
-  }
-  @else if $heading-level == 3 {
-    @include element-type(su(ms(3)));
-    letter-spacing: .05rem;
-    font-weight: $heading-weight;
-  }
-  @else if $heading-level == 4 {
-    @include element-type(su(ms(2)));
-    letter-spacing: .02rem;
-    font-weight: $heading-weight;
-  }
-  @else if $heading-level == 5 {
-    @include element-type(su(ms(1)));
-    font-weight: $heading-weight;
-  }
-  @else if $heading-level == 6 {
-    @include element-type(su(ms(0)));
-    font-weight: $heading-weight;
-  }
-  @else {
-    @error "Please provide a valid heading value between 1 and 6";
-  }
-}
-
-@mixin code {
-  font-family: $code-font-family;
-  @include element-type(1.45);
-  @include margin(0 0 1em 0);
-}
-
 @mixin hr {
-  margin: 1em 0;
+  @include margin(1em 0);
   border-style: solid;
   color: currentColor;
 }
@@ -190,12 +211,3 @@ $ms-ratio: $fourth ;
   }
 }
 
-@mixin list {
-  font-family: $body-font-family;
-  @include element-type;
-}
-
-@mixin list-reset {
-  list-style: none;
-  padding-left: 0;
-}

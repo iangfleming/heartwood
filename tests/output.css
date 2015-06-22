@@ -1,116 +1,107 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", helvetica, sans-serif;
+  line-height: 1.25;
+  text-rendering: optimizeLegibility; }
+
 html {
+  font-family: "Roboto", helvetica, sans-serif;
   font-size: 62.5%;
+  font-weight: 400;
+  line-height: 1.5;
   color: #2d2d2d; }
-  @media (max-width: 900px) {
-    html {
-      font-size: 59.375%; } }
-  @media (max-width: 400px) {
-    html {
-      font-size: 56.25%; } }
 
 section {
   font-size: 10px;
   font-size: 1rem; }
 
 p {
-  font-family: "Roboto", helvetica, sans-serif;
   font-size: 18px;
   font-size: 1.8em;
-  letter-spacing: .01rem;
-  font-weight: 400;
-  line-height: 1.5;
   margin: 0 0 1em 0;
   text-rendering: optimizeSpeed; }
 
+.dropcap:first-letter {
+  font-size: 3.75em;
+  vertical-align: bottom;
+  float: left;
+  line-height: 0.9;
+  margin-right: 0.4rem;
+  margin-left: -0.05rem; }
+
 a {
-  font-family: "Roboto", helvetica, sans-serif;
   font-size: 18px;
   font-size: 1.8rem;
-  color: #2d2d2d;
-  letter-spacing: .01rem;
-  font-weight: 400;
-  line-height: 1.5;
+  color: cornflowerblue;
   margin: 0 0 1em 0;
-  text-rendering: optimizeSpeed;
   cursor: pointer;
   text-decoration: none;
-  background-image: linear-gradient(to top, transparent, transparent 2px, #2d2d2d 2px, #2d2d2d 3px, transparent 3px);
-  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
-  background-image: linear-gradient(to top, transparent, transparent 2px, #2d2d2d 2px, #2d2d2d 3px, transparent 3px); }
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  background-image: linear-gradient(to top, transparent, transparent 2px, cornflowerblue 2px, cornflowerblue 3px, transparent 3px); }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     a {
-      background-image: linear-gradient(to top, transparent, transparent 2px, #2d2d2d 2px, #2d2d2d 2.5px, transparent 2.5px); } }
+      background-image: linear-gradient(to top, transparent, transparent 2px, cornflowerblue 2px, cornflowerblue 2.5px, transparent 2.5px); } }
   a:hover, a:focus {
     background-image: linear-gradient(to top, transparent, transparent 2px, #474747 2px, #474747 3px, transparent 3px); }
     @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
       a:hover, a:focus {
         background-image: linear-gradient(to top, transparent, transparent 2px, #474747 2px, #474747 2.5px, transparent 2.5px); } }
+  a:visited {
+    color: #a9c4f5; }
+
+.link--simple {
+  font-size: 18px;
+  font-size: 1.8rem;
+  color: cornflowerblue;
+  margin: 0 0 1em 0;
+  cursor: pointer;
+  text-decoration: underline; }
+  .link--simple:hover {
+    color: #474747; }
+  .link--simple:visited {
+    color: #a9c4f5; }
 
 h1 {
-  font-family: "Roboto", helvetica, sans-serif;
-  line-height: 1.25;
-  margin: 1em 0 0.5em 0;
-  text-rendering: optimizeLegibility;
-  font-size: 39.86719px;
-  font-size: 3.98672em;
-  letter-spacing: .2rem;
-  font-weight: 400; }
+  font-size: 80.06584px;
+  font-size: 8.00658em;
+  font-weight: 400;
+  margin: 0; }
 
 h2 {
-  font-family: "Roboto", helvetica, sans-serif;
-  line-height: 1.25;
-  margin: 1em 0 0.5em 0;
-  text-rendering: optimizeLegibility;
-  font-size: 26.57812px;
-  font-size: 2.65781em;
-  letter-spacing: .15rem;
+  font-size: 60.04938px;
+  font-size: 6.00494em;
   font-weight: 400; }
 
 h3 {
-  font-family: "Roboto", helvetica, sans-serif;
-  line-height: 1.25;
-  margin: 1em 0 0.5em 0;
-  text-rendering: optimizeLegibility;
-  font-size: 17.71875px;
-  font-size: 1.77187em;
-  letter-spacing: .05rem;
+  font-size: 45.03704px;
+  font-size: 4.5037em;
   font-weight: 400; }
 
 h4 {
-  font-family: "Roboto", helvetica, sans-serif;
-  line-height: 1.25;
-  margin: 1em 0 0.5em 0;
-  text-rendering: optimizeLegibility;
-  font-size: 11.8125px;
-  font-size: 1.18125em;
-  letter-spacing: .02rem;
+  font-size: 33.77778px;
+  font-size: 3.37778em;
   font-weight: 400; }
 
 h5 {
-  font-family: "Roboto", helvetica, sans-serif;
-  line-height: 1.25;
-  margin: 1em 0 0.5em 0;
-  text-rendering: optimizeLegibility;
-  font-size: 7.875px;
-  font-size: 0.7875em;
+  font-size: 25.33333px;
+  font-size: 2.53333em;
   font-weight: 400; }
 
 h6 {
-  font-family: "Roboto", helvetica, sans-serif;
-  line-height: 1.25;
-  margin: 1em 0 0.5em 0;
-  text-rendering: optimizeLegibility;
-  font-size: 5.25px;
-  font-size: 0.525em;
+  font-size: 19px;
+  font-size: 1.9em;
   font-weight: 400; }
 
 pre {
   font-family: "Source Sans Pro", monospace, sans-serif;
   font-size: 14.5px;
   font-size: 1.45em;
-  margin: 0 0 1em 0; }
+  margin: 0 0 1em 0;
+  color: white;
+  background: #2d2d2d;
+  border-radius: 5px;
+  padding: 2rem; }
 
-blockquote {
+.quote--border {
   font-family: "Roboto", helvetica, sans-serif;
   font-size: 18px;
   font-size: 1.8em;
@@ -119,10 +110,26 @@ blockquote {
   border-left: 2px solid #2d2d2d;
   padding-left: 1em; }
 
+.quote--quote {
+  font-family: "Roboto", helvetica, sans-serif;
+  font-size: 18px;
+  font-size: 1.8em;
+  font-style: italic;
+  margin: 1em 0; }
+  .quote--quote:before {
+    content: "\201C";
+    font-size: 20px;
+    font-size: 2em;
+    margin-left: -15px; }
+
 ul, ol {
   font-family: "Roboto", helvetica, sans-serif;
   font-size: 16px;
   font-size: 1.6em; }
+
+.list-reset {
+  list-style: none;
+  padding-left: 0; }
 
 hr {
   margin: 1em 0;

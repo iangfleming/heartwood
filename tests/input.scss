@@ -1,8 +1,8 @@
 @import '../heartwood';
 // write tests here
-
+$link-color: cornflowerblue;
 html {
-  @include document-type();
+  @include document-type;
 }
 
 section {
@@ -13,11 +13,21 @@ p {
   @include p;
 }
 
+.dropcap {
+  @include dropcap(2.5, 1.5);
+}
+
 a {
   @include a;
 }
 
-@for $i from 1 through 6 {
+.link--simple {
+  @include a(simple);
+}
+h1 {
+  @include h(1, 400, no-margin);
+}
+@for $i from 2 through 6 {
   h#{$i} {
     @include h($i);
   }
@@ -25,14 +35,25 @@ a {
 
 pre {
   @include code;
+  color: white;
+  background: #2d2d2d;
+  border-radius: 5px;
+  padding: 2rem;
 }
 
-blockquote {
+.quote--border {
   @include blockquote(border);
+}
+
+.quote--quote {
+  @include blockquote(quote);
 }
 
 ul, ol {
   @include list;
+}
+.list-reset {
+  @include list-reset;
 }
 
 hr {
