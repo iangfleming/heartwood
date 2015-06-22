@@ -15,4 +15,6 @@ or
 
 [Download](https://github.com/iangfleming/heartwood/archive/master.zip) the zip or clone this repo.
 
+To customize settings take a look at the _heartwood-config.scss file.
+
 For more details visit the [site](http://ianfleming.me/heartwood)
